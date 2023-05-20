@@ -10,18 +10,28 @@
 
 
     <script>
-        
+
+        // parei na atividade SEQ-006
+
         meuNome='Josue Micaroni do Rosario'
-        minhaIdade = 54
+        anoNascimento = window.prompt('Data de Nascimento',1979)
+        minhaIdade = 2023 - parseInt(anoNascimento)
+        maiorIdade = minhaIdade >= 18
 
         nomeMae = 'Celia Regina'
-        idadeMae = 95
+        anoNascimentoMae = window.prompt('Data de Nascimento Mae',1910)
+        idadeMae = 2023 - parseInt(anoNascimentoMae)
+        maiorIdadeMae = idadeMae >= 18
 
-        console.log('Meu nome é '+meuNome+' e tenho '+minhaIdade+' anos sou filho de '+nomeMae+' que tem '+idadeMae+' anos')
+        console.log(`Nome  : ${meuNome}`)
+        console.log(`Idade : ${minhaIdade}`)
+        console.log(`Maior de Idade : ${maiorIdade}`)
         
-
-
-
+        
+        console.log(`Nome Mae : ${nomeMae}`)
+        console.log(`Idade : ${idadeMae}`)
+        console.log(`Maior de Idade : ${maiorIdadeMae}`)
+        
 
     
     </script>
