@@ -12,33 +12,23 @@
     <script>
 
         // parei na atividade SEQ-006
-
-
-        // function nomefuncao(argumento1,argumento2){
-        //     // o que vai acontecer de verdade
-        //     return valor de retorno
-        // }
-
-        function soma(num1,num2){
-            total = num1 + num2
-            return total
-        }
+        
 
         meuNome='Josue Micaroni do Rosario'
         anoNascimento = window.prompt('Data de Nascimento',1979)
-        minhaIdade = 2023 - parseInt(anoNascimento)
-        maiorIdade = minhaIdade >= 18
+        minhaIdade = calculaIdade(anoNascimento)
+        meuSexo = 'M'
 
         nomeMae = 'Celia Regina'
         anoNascimentoMae = window.prompt('Data de Nascimento Mae',1910)
-        idadeMae = 2023 - parseInt(anoNascimentoMae)
-        maiorIdadeMae = idadeMae >= 18
-
-        
+        idadeMae = calculaIdade(anoNascimentoMae)
+        maiorIdadeMae = idadeMae >= 18      
+        meuMae = 'F'
 
         console.log(`Nome  : ${meuNome}`) 
         console.log(`Idade :  ${minhaIdade} `, (minhaIdade === 1 ?  ' ano': ' anos')) 
-        console.log(`Maior de Idade : ${maiorIdade}`)
+        console.log('Maior de Idade : ', minhaIdade >= 18 ? 'sim':'nao')
+        console.log('Pode Aposentar : ', (minhaIdade>=65 && meuSexo == 'M')||(minhaIdade>=60 && meuSexo == 'F') ? "sim":"nao")
         
         
         console.log(`Nome Mae : ${nomeMae}`)
@@ -46,7 +36,10 @@
         console.log(`Maior de Idade : ${maiorIdadeMae}`)
 
 
-
+        function calculaIdade(anoNascimento){
+            totalIdade = 2023 - parseInt(anoNascimento)
+            return totalIdade
+        }
         
 
     
