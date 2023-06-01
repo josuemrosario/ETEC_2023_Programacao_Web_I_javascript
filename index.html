@@ -11,7 +11,21 @@
 
     <script>
 
-        // parei na atividade SEQ-006
+        // parei objeto literal
+
+        fuscaoPreto = { 
+            modelo: 'Fuscao',
+            cor: 'preta',
+            ano: 1996,
+            mudaAno(ano){
+                this.ano = ano
+            }
+        }
+
+        console.log(fuscaoPreto.modelo)
+        console.log(fuscaoPreto.ano)
+        fuscaoPreto.mudaAno(1976)
+        console.log(fuscaoPreto.ano)
         
 
         meuNome='Josue Micaroni do Rosario'
@@ -37,7 +51,8 @@
 
 
         function calculaIdade(anoNascimento){
-            totalIdade = 2023 - parseInt(anoNascimento)
+            data = new Date()
+            totalIdade = data.getFullYear() - parseInt(anoNascimento)
             return totalIdade
         }
         
