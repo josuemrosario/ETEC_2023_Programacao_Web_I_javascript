@@ -11,23 +11,27 @@
 
     <script>
 
-        // parei objeto literal
 
-        fuscaoPreto = { 
-            modelo: 'Fuscao',
-            cor: 'preta',
-            ano: 1996,
-            mudaAno(ano){
+        class Carro{
+
+            constructor(modelo,cor,ano){
+                this.modelo = modelo
+                this.cor = cor
                 this.ano = ano
             }
+
+            tempoUso(){
+                return 2023 - this.ano
+            }
+
         }
 
+        fuscaoPreto = new Carro('fusca','preta',1976)
+        console.log(fuscaoPreto.ano)
         
 
-        console.log(fuscaoPreto.modelo)
-        console.log(fuscaoPreto.ano)
-        fuscaoPreto.mudaAno(1976)
-        console.log(fuscaoPreto.ano)
+
+
 
         josue = {
             meuNome: 'Josue Micaroni do Rosario',
@@ -36,25 +40,32 @@
             meuSexo: 'M'
         }
         
-        euMesmo.anoNascimento = window.prompt('Data de Nascimento',1979)
-        euMesmo.minhaIdade = calculaIdade(anoNascimento)
+        josue.anoNascimento = window.prompt('Data de Nascimento',1979)
+        josue.minhaIdade = calculaIdade(josue.anoNascimento)
         
 
-        nomeMae = 'Celia Regina'
-        anoNascimentoMae = window.prompt('Data de Nascimento Mae',1910)
-        idadeMae = calculaIdade(anoNascimentoMae)
-        maiorIdadeMae = idadeMae >= 18      
-        meuMae = 'F'
+        celia = {
+            nomeMae: 'Celia Regina',
+            anoNascimentoMae: '',
+            idadeMae: 0,
+            sexoMae: 'F'
 
-        console.log(`Nome  : ${meuNome}`) 
-        console.log(`Idade :  ${minhaIdade} `, (minhaIdade === 1 ?  ' ano': ' anos')) 
-        console.log('Maior de Idade : ', minhaIdade >= 18 ? 'sim':'nao')
-        console.log('Pode Aposentar : ', (minhaIdade>=65 && meuSexo == 'M')||(minhaIdade>=60 && meuSexo == 'F') ? "sim":"nao")
+        }
+
+        celia.anoNascimentoMae = window.prompt('Data de Nascimento Mae',1910)
+        celia.idadeMae = calculaIdade(celia.anoNascimentoMae)
+        
+
+        console.log(`Nome  : ${josue.meuNome}`) 
+        console.log(`Idade :  ${josue.minhaIdade} `, (josue.minhaIdade === 1 ?  ' ano': ' anos')) 
+        console.log('Maior de Idade : ', josue.minhaIdade >= 18 ? 'sim':'nao')
+        console.log('Pode Aposentar : ', (josue.minhaIdade>=65 && josue.meuSexo == 'M')||(josue.minhaIdade>=60 && josue.meuSexo == 'F') ? "sim":"nao")
         
         
-        console.log(`Nome Mae : ${nomeMae}`)
-        console.log(`Idade : ${idadeMae}`, (idadeMae === 1 ?  ' ano': ' anos'))
-        console.log(`Maior de Idade : ${maiorIdadeMae}`)
+        console.log(`Nome Mae : ${celia.nomeMae}`)
+        console.log(`Idade : ${celia.idadeMae}`, (celia.idadeMae === 1 ?  ' ano': ' anos'))
+        console.log(`Maior de Idade : ${celia.idadeMae >= 18 ? 'sim':'nao'}`)
+        console.log('Pode Aposentar : ', (celia.idadeMae>=65 && celia.sexoMae == 'M')||(celia.idadeMae>=60 && celia.sexoMae == 'F') ? "sim":"nao")
 
 
         function calculaIdade(anoNascimento){
