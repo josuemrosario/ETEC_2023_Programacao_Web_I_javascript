@@ -22,16 +22,23 @@
             }
         }
 
+        
+
         console.log(fuscaoPreto.modelo)
         console.log(fuscaoPreto.ano)
         fuscaoPreto.mudaAno(1976)
         console.log(fuscaoPreto.ano)
-        
 
-        meuNome='Josue Micaroni do Rosario'
-        anoNascimento = window.prompt('Data de Nascimento',1979)
-        minhaIdade = calculaIdade(anoNascimento)
-        meuSexo = 'M'
+        josue = {
+            meuNome: 'Josue Micaroni do Rosario',
+            anoNascimento: '',
+            minhaIdade: 0,
+            meuSexo: 'M'
+        }
+        
+        euMesmo.anoNascimento = window.prompt('Data de Nascimento',1979)
+        euMesmo.minhaIdade = calculaIdade(anoNascimento)
+        
 
         nomeMae = 'Celia Regina'
         anoNascimentoMae = window.prompt('Data de Nascimento Mae',1910)
